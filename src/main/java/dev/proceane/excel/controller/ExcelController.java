@@ -44,4 +44,16 @@ public class ExcelController {
                 .body(resource);
     }
 
+    @SneakyThrows
+    @GetMapping("/excel/sxssf/encrypt")
+    public ResponseEntity<Resource> downloadSXSSFEncryptExcelFile() {
+        InputStreamResource resource = new InputStreamResource(service.getSXSSFEncryptExcelFile());
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, ContentDisposition.attachment()
+                        .filename("excel_encrypt.xlsx", StandardCharsets.UTF_8)
+                        .build().toString())
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .body(resource);
+    }
+
 }

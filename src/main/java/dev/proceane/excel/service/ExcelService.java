@@ -7,6 +7,7 @@ import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.streaming.SXSSFCell;
 import org.apache.poi.xssf.streaming.SXSSFRow;
 import org.apache.poi.xssf.streaming.SXSSFSheet;
@@ -35,7 +36,15 @@ public class ExcelService {
 
     public InputStream getXssfEncryptExcelFile() throws IOException, GeneralSecurityException {
         XSSFWorkbook workbook = getXSSFWorkbook();
+        return getEncryptInputStream(workbook);
+    }
 
+    public InputStream getSXSSFEncryptExcelFile() throws IOException, GeneralSecurityException {
+        SXSSFWorkbook workbook = getSXSSFWorkbook();
+        return getEncryptInputStream(workbook);
+    }
+
+    private ByteArrayInputStream getEncryptInputStream(Workbook workbook) throws IOException, GeneralSecurityException {
         EncryptionInfo info = new EncryptionInfo(EncryptionMode.agile);
         Encryptor enc = info.getEncryptor();
         enc.confirmPassword("1234");
@@ -56,6 +65,15 @@ public class ExcelService {
 
     private XSSFWorkbook getXSSFWorkbook() {
         XSSFWorkbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet();
+        Row row = sheet.createRow(0);
+        Cell cell = row.createCell(0);
+        cell.setCellValue("test");
+        return workbook;
+    }
+
+    private SXSSFWorkbook getSXSSFWorkbook() {
+        SXSSFWorkbook workbook = new SXSSFWorkbook();
         Sheet sheet = workbook.createSheet();
         Row row = sheet.createRow(0);
         Cell cell = row.createCell(0);
