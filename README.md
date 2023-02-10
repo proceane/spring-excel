@@ -15,7 +15,7 @@
 ```text
 http://localhost:8080/excel
 ```
-2. 암호화 엑셀 파일 생성 및 다운로드
+2. 암호화 엑셀 파일 생성 및 다운로드(password: 1234)
 ```text
 http://localhost:8080/excel/xssf/encrypt
 http://localhost:8080/excel/sxssf/encrypt
