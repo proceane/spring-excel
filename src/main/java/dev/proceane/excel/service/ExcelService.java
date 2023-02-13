@@ -55,7 +55,7 @@ public class ExcelService {
         return workbook;
     }
 
-    private static ByteArrayInputStream getInputStream(Workbook workbook) throws IOException {
+    private static InputStream getInputStream(Workbook workbook) throws IOException {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         workbook.write(outputStream);
         workbook.close();
@@ -63,7 +63,7 @@ public class ExcelService {
     }
 
 
-    private static ByteArrayInputStream getEncryptInputStream(Workbook workbook) throws IOException, GeneralSecurityException {
+    private static InputStream getEncryptInputStream(Workbook workbook) throws IOException, GeneralSecurityException {
         EncryptionInfo info = new EncryptionInfo(EncryptionMode.agile);
         Encryptor enc = info.getEncryptor();
         enc.confirmPassword("1234");
