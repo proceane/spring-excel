@@ -6,7 +6,7 @@ import java.security.GeneralSecurityException;
 
 import org.springframework.stereotype.Service;
 
-import dev.proceane.excel.poi316.service.Excel316Service;
+import dev.proceane.excel.poi317.service.Excel317Service;
 import dev.proceane.excel.poi523.service.Excel523Service;
 import lombok.RequiredArgsConstructor;
 
@@ -14,11 +14,11 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ExcelService {
 
-    private final Excel316Service service316;
+    private final Excel317Service service317;
     private final Excel523Service service523;
 
     public InputStream getExcelFile() throws IOException {
-        return service316.getExcelFile();
+        return service317.getExcelFile();
     }
 
     public InputStream getEmojiExcelFile() throws IOException {
@@ -26,11 +26,11 @@ public class ExcelService {
     }
 
     public InputStream getXssfEncryptExcelFile() throws IOException, GeneralSecurityException {
-        return Excel316Service.getXssfEncryptExcelFile();
+        return Excel317Service.getXssfEncryptExcelFile();
     }
 
     public InputStream getSXSSFEncryptExcelFile() throws IOException, GeneralSecurityException {
-        return Excel316Service.getSXSSFEncryptExcelFile();
+        return Excel317Service.getSXSSFEncryptExcelFile();
     }
 
 }

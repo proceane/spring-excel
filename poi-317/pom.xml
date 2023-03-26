@@ -9,10 +9,10 @@
     <relativePath /> <!-- lookup parent from repository -->
   </parent>
   <groupId>dev.proceane.excel</groupId>
-  <artifactId>poi-316</artifactId>
+  <artifactId>poi-317</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>poi-316</name>
-  <description>poi-316</description>
+  <name>poi-317</name>
+  <description>poi 3.17 version</description>
   <properties>
     <java.version>1.8</java.version>
   </properties>
@@ -25,12 +25,12 @@
     <dependency>
       <groupId>org.apache.poi</groupId>
       <artifactId>poi</artifactId>
-      <version>3.16</version>
+      <version>3.17</version>
     </dependency>
     <dependency>
       <groupId>org.apache.poi</groupId>
       <artifactId>poi-ooxml</artifactId>
-      <version>3.16</version>
+      <version>3.17</version>
     </dependency>
 
     <dependency>

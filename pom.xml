@@ -30,7 +30,7 @@
 
 		<dependency>
 			<groupId>dev.proceane.excel</groupId>
-			<artifactId>poi-316</artifactId>
+			<artifactId>poi-317</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 

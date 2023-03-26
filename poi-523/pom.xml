@@ -12,7 +12,7 @@
   <artifactId>poi-523</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>poi-523</name>
-  <description>poi-523</description>
+  <description>poi 5.2.3 version</description>
   <properties>
     <java.version>1.8</java.version>
   </properties>
@@ -31,6 +31,26 @@
       <groupId>org.apache.poi</groupId>
       <artifactId>poi-ooxml</artifactId>
       <version>5.2.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml-full</artifactId>
+      <version>5.2.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.xmlbeans</groupId>
+      <artifactId>xmlbeans</artifactId>
+      <version>3.1.0</version>
+      <exclusions>
+        <exclusion>
+          <groupId>stax</groupId>
+          <artifactId>stax-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>xalan</groupId>
+          <artifactId>xalan</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <dependency>

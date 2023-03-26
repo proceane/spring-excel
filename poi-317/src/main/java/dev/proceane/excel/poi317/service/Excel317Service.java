@@ -1,4 +1,4 @@
-package dev.proceane.excel.poi316.service;
+package dev.proceane.excel.poi317.service;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -20,7 +20,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Excel316Service {
+public class Excel317Service {
 
     public InputStream getExcelFile() throws IOException {
         SXSSFWorkbook workbook = getSXSSFWorkbook();
@@ -52,6 +52,9 @@ public class Excel316Service {
         Row row = sheet.createRow(0);
         Cell cell = row.createCell(0);
         cell.setCellValue("test");
+
+        cell = row.createCell(1);
+        cell.setCellValue("test💙💙💙");
         return workbook;
     }
 
